@@ -89,7 +89,7 @@ class SubmissionRequestError(SubmissionError):
         )
 
 
-def create_submission(student_item_dict, answer, submitted_at=None, attempt_number=None):
+def create_submission(student_item_dict, answer, url, submitted_at=None, attempt_number=None):
     """Creates a submission for assessment.
 
     Generic means by which to submit an answer for assessment.
@@ -134,13 +134,14 @@ def create_submission(student_item_dict, answer, submitted_at=None, attempt_numb
         >>>    course_id="course_1",
         >>>    item_type="type_one"
         >>> )
-        >>> create_submission(student_item_dict, "The answer is 42.", datetime.utcnow, 1)
+        >>> create_submission(student_item_dict, "The answer is 42.", www.google.com, datetime.utcnow, 1)
         {
             'student_item': 2,
             'attempt_number': 1,
             'submitted_at': datetime.datetime(2014, 1, 29, 17, 14, 52, 649284 tzinfo=<UTC>),
             'created_at': datetime.datetime(2014, 1, 29, 17, 14, 52, 668850, tzinfo=<UTC>),
             'answer': u'The answer is 42.'
+            'url': www.google.com
         }
 
     """
@@ -159,6 +160,7 @@ def create_submission(student_item_dict, answer, submitted_at=None, attempt_numb
     model_kwargs = {
         "student_item": student_item_model.pk,
         "answer": answer,
+        "url" : url,
         "attempt_number": attempt_number,
     }
     if submitted_at:
