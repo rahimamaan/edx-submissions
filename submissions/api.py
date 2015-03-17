@@ -89,7 +89,7 @@ class SubmissionRequestError(SubmissionError):
         )
 
 
-def create_submission(student_item_dict, answer, url, submitted_at=None, attempt_number=None):
+def create_submission(student_item_dict, answer, submitted_at=None, attempt_number=None, url=None):
     """Creates a submission for assessment.
 
     Generic means by which to submit an answer for assessment.
