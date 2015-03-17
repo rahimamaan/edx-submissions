@@ -100,7 +100,7 @@ class Submission(models.Model):
             submitted_at=self.submitted_at,
             created_at=self.created_at,
             raw_answer=self.raw_answer,
-            url=self.url
+            url=self.url,
         ))
 
     def __unicode__(self):
