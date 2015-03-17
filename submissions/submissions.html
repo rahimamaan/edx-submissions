@@ -7,7 +7,7 @@
     <th>Student Item</th>
     <th>Attempt Number</th>
     <th>Answer</th>
-    <!--<th>URL</th>--> 
+    <th>URL</th>
     <th>Submitted At</th>
     <th>Created At</th>
     {% for submission in submissions%}
@@ -16,7 +16,7 @@
             <td>{{ submission.student_item }}</td>
             <td>{{ submission.attempt_number }}</td>
             <td>{{ submission.answer }}</td>
-            <!--<td>{{ submission.URL }}</td> -->
+            <td>{{ submission.URL }}</td>
             <td>{{ submission.submitted_at }}</td>
             <td>{{ submission.created_at }}</td>
         </tr>
