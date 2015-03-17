@@ -83,6 +83,7 @@ class SubmissionSerializer(serializers.ModelSerializer):
 
             # Computed
             'answer',
+            'url',
         )
 
 
