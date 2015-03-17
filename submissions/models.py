@@ -89,6 +89,8 @@ class Submission(models.Model):
 
     # The answer (JSON-serialized)
     raw_answer = models.TextField(blank=True)
+    
+    url = models.URLField(max_length = 8000, blank=True) 
 
     def __repr__(self):
         return repr(dict(
@@ -98,6 +100,7 @@ class Submission(models.Model):
             submitted_at=self.submitted_at,
             created_at=self.created_at,
             raw_answer=self.raw_answer,
+            url=self.url
         ))
 
     def __unicode__(self):
